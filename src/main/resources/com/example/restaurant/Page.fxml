@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="260.0" style="-fx-background-color: brown;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#eae0e0" layoutX="35.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Falvour">
+               <font>
+                  <Font size="52.0" />
+               </font></Text>
+            <Text layoutX="130.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adressbut" />
+            <Button fx:id="reservation" layoutX="79.0" layoutY="205.0" mnemonicParsing="false" onAction="#reservationClicked" text="Reservation" />
+            <Button fx:id="italian" layoutX="79.0" layoutY="244.0" mnemonicParsing="false" onAction="#italianClicked" text="Italian" />
+            <Button fx:id="chinese" layoutX="79.0" layoutY="290.0" mnemonicParsing="false" onAction="#chineseClicked" text="Chinese" />
+            <Button fx:id="orders" layoutX="66.0" layoutY="338.0" mnemonicParsing="false" onAction="#ordersClicked" text="Orders" />
+            <Button fx:id="contacUs" layoutX="78.0" layoutY="411.0" mnemonicParsing="false" onAction="#contacUsClicked" text="Contact Us" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <ScrollPane prefHeight="1200.0" prefWidth="740.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1200.0" prefWidth="740.0">
+               <children>
+                  <Pane layoutX="39.0" layoutY="29.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@../../../../../../../SoftwareProject/src/main/resources/com/example/softwareproject/ForThis.css" />
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
