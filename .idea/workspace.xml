@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f336bed-6906-492c-be6e-9916951cf7b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/Saple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/brownlemonade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/diet coke.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/Css.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/Css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/Page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/Page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/restaurant/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="4f336bed-6906-492c-be6e-9916951cf7b8" name="Changes" comment="Alua" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +45,14 @@
       <option name="presentableId" value="Default" />
       <updated>1703067155376</updated>
     </task>
+    <task id="LOCAL-00001" summary="Alua">
+      <created>1703156949486</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703156949486</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -69,5 +65,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Alua" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alua" />
   </component>
 </project>
