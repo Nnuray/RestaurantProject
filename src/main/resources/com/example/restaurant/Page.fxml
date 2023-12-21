@@ -26,13 +26,12 @@
                   <Font name="Rockwell" size="20.0" />
                </font>
             </Text>
-            <Button fx:id="reservation" layoutX="79.0" layoutY="205.0" mnemonicParsing="false" onAction="#reservationClicked" text="Reservation" />
             <Button fx:id="italian" layoutX="5.0" layoutY="243.0" mnemonicParsing="false" onAction="#italianClicked" style="-fx-background-color: fffff;" text="Italian" textFill="#fcfafa">
                <font>
                   <Font name="Century" size="23.0" />
                </font>
             </Button>
-            <Button fx:id="chinese" layoutX="-1.0" layoutY="289.0" mnemonicParsing="false" onAction="#chineseClicked" style="-fx-background-color: fffff;" text="Chinese" textFill="#f4efef">
+            <Button fx:id="chinese" layoutX="2.0" layoutY="289.0" mnemonicParsing="false" onAction="#chineseClicked" style="-fx-background-color: fffff;" text="Chinese" textFill="#f4efef">
                <font>
                   <Font name="Century" size="23.0" />
                </font>
@@ -54,6 +53,7 @@
                   <Font name="Century" size="23.0" />
                </font>
             </Button>
+
          </children>
       </AnchorPane>
    </left>

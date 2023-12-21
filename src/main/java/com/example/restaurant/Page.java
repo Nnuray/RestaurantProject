@@ -1,11 +1,15 @@
 package com.example.restaurant;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,58 +17,14 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Page {
 
-        @FXML
-        private Text amount;
-
-        @FXML
-        private Text amount1;
-
-        @FXML
-        private Text amount11;
-
-        @FXML
-        private Text amount111;
-
-        @FXML
-        private Text amount1111;
-
-        @FXML
-        private Text amount12;
-
-        @FXML
-        private Text amount121;
-
-        @FXML
-        private Text amount122;
-
-        @FXML
-        private Text amount123;
-
-        @FXML
-        private Text amount124;
-
-        @FXML
-        private Text amount125;
-
-        @FXML
-        private Text amount1251;
-
-        @FXML
-        private Text amount1252;
-
-        @FXML
-        private Text amount12521;
-
-        @FXML
-        private Text amount12522;
-
-        @FXML
-        private Text amount1253;
+public class Page implements Menu{
 
         @FXML
         private Button bolognese3050;
@@ -121,54 +81,6 @@ public class Page {
         private Button lobster2520;
 
         @FXML
-        private Button minus;
-
-        @FXML
-        private Button minus1;
-
-        @FXML
-        private Button minus11;
-
-        @FXML
-        private Button minus111;
-
-        @FXML
-        private Button minus1111;
-
-        @FXML
-        private Button minus12;
-
-        @FXML
-        private Button minus121;
-
-        @FXML
-        private Button minus122;
-
-        @FXML
-        private Button minus123;
-
-        @FXML
-        private Button minus124;
-
-        @FXML
-        private Button minus125;
-
-        @FXML
-        private Button minus1251;
-
-        @FXML
-        private Button minus1252;
-
-        @FXML
-        private Button minus12521;
-
-        @FXML
-        private Button minus12522;
-
-        @FXML
-        private Button minus1253;
-
-        @FXML
         private Button mojito750;
 
         @FXML
@@ -178,61 +90,11 @@ public class Page {
         private Button orders;
 
         @FXML
-        private Button plus;
-
-        @FXML
-        private Button plus1;
-
-        @FXML
-        private Button plus11;
-
-        @FXML
-        private Button plus111;
-
-        @FXML
-        private Button plus1111;
-
-        @FXML
-        private Button plus12;
-
-        @FXML
-        private Button plus121;
-
-        @FXML
-        private Button plus122;
-
-        @FXML
-        private Button plus123;
-
-        @FXML
-        private Button plus124;
-
-        @FXML
-        private Button plus125;
-
-        @FXML
-        private Button plus1251;
-
-        @FXML
-        private Button plus1252;
-
-        @FXML
-        private Button plus12521;
-
-        @FXML
-        private Button plus12522;
-
-        @FXML
-        private Button plus1253;
-
-        @FXML
         private Button pollo2900;
 
         @FXML
         private Button prosecco900;
 
-        @FXML
-        private Button reservation;
 
         @FXML
         private Button salmon2700;
@@ -251,6 +113,12 @@ public class Page {
 
         @FXML
         private ScrollPane ordersPane;
+
+        private int total;
+
+
+        List<MenuItem> list = new ArrayList<>();
+
 
         @FXML
         void bolognese3050Clicked(ActionEvent event) {
@@ -306,13 +174,36 @@ public class Page {
                 imageView.setFitWidth(100);
                 imageView.setFitHeight(100);
                 hbox.getChildren().add(imageView);
+               ProgressBar p = new ProgressBar(0);
+                Timeline task = new Timeline(
+                        new KeyFrame(
+                                Duration.ZERO,
+                                new KeyValue(p.progressProperty(), 0)
+                        ),
+                        new KeyFrame(
+                                Duration.seconds(2),
+                                new KeyValue(p.progressProperty(), 1)
+                        )
+                );
+                task.playFromStart();
+                MenuItem m = new MenuItem("dumplings",2300,1);
+                list.add(m);
+                BaseRestaurant b = new BaseRestaurant();
+                int x = b.calculateTotal(list);
+                Text text = new Text(String.valueOf(x));
+                text.setLayoutX(23);
                 vbox.setSpacing(10);
-                vbox.getChildren().addAll(hbox);
+                vbox.getChildren().addAll(hbox,p,text);
+
+
+
+
 
         }
 
         @FXML
         void fish2500Clicked(ActionEvent event) {
+
 
         }
 
@@ -389,40 +280,9 @@ public class Page {
 
         @FXML
         void tofu2600Clicked(ActionEvent event) throws FileNotFoundException {
-       ErrorPassOrName("Added to the Cart");
         }
 
-        void ErrorPassOrName(String message) throws FileNotFoundException {
-                Stage stage = new Stage();
-                Button ok = new Button("OK");
-                Button cancel = new Button("Cancel");
-                Text text = new Text(message);
-                text.setFill(Color.WHITE);
-                HBox hBox = new HBox(8,text);
-                hBox.setAlignment(Pos.CENTER);
-                HBox hBox1 = new HBox(8, ok, cancel);
-                hBox1.setAlignment(Pos.CENTER);
-                VBox vBox = new VBox(25, hBox,hBox1);
-                vBox.setAlignment(Pos.CENTER);
-                StackPane stackPane = new StackPane(vBox);
-                stackPane.setAlignment(Pos.CENTER);
-                Scene scene = new Scene(stackPane,450, 200);
-                text.setStyle("-fx-font-weight: 500;-fx-font-size: 14");
-                ok.setStyle("-fx-background-color: white; -fx-text-fill: black; -fx-border-radius: 7px;-fx-background-radius: 7px; -fx-border-color: black");
-                cancel.setStyle("-fx-background-color: white; -fx-text-fill: black; -fx-border-radius: 7px;-fx-background-radius: 7px;-fx-border-color: black");
-                stackPane.setStyle("-fx-background-color: #061251");
-                stage.setScene(scene);
-                stage.show();
-                ok.setOnAction(e -> {
-                        Stage stage1 = (Stage) ok.getScene().getWindow();
-                        stage1.close();
 
-                });
-                cancel.setOnAction(e -> {
-                        Stage stage1 = (Stage) cancel.getScene().getWindow();
-                        stage1.close();
-                });
-        }
 
         //sdfcds
 
