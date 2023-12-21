@@ -1,17 +1,19 @@
 package com.example.restaurant;
 
+import javafx.scene.text.Text;
+
 public class MenuItem {
-    String name;
+    Text name;
     int price;
     int quantity;
 
-    public MenuItem(String name, int price, int quantity) {
+    public MenuItem(Text name, int price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public String getName() {
+    public Text getName() {
         return name;
     }
 
@@ -23,7 +25,7 @@ public class MenuItem {
         return quantity;
     }
 
-    public void setName(String name) {
+    public void setName(Text name) {
         this.name = name;
     }
 

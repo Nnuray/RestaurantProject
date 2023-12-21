@@ -1,11 +1,13 @@
 package com.example.restaurant;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -13,6 +15,9 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
 public class Saple {
+    @FXML
+    private Pane pane;
+
 
 
     void ErrorPassOrName(String message) throws FileNotFoundException {
@@ -47,4 +52,53 @@ public class Saple {
         });
     }
 
+    @FXML
+    VBox vbox;
+@FXML
+GridPane grid;
+
+    @FXML
+    void reservationClicked(ActionEvent event) {
+        VBox h = new VBox();
+        Image img = new Image("C:\\Users\\ПК\\IdeaProjects\\Restaurant\\src\\main\\resources\\com\\example\\restaurant\\red wine.png");
+        ImageView i = new ImageView(img);
+        i.setFitHeight(200);
+        i.setFitWidth(200);
+        h.setSpacing(30);
+        Text text = new Text("isbvhuabcliwa");
+        text.setStyle("  -fx-font-family: \"Berlin Sans FB\", sans-serif;\n" +
+                "    -fx-font-size: 40px;\n" +
+                "    -fx-font-weight: regular;");
+        h.setStyle("-fx-border-color:black;"+"-fx-border-radius:10px");
+        h.getChildren().addAll(i,text);
+        h.setLayoutX(100);
+        grid.getChildren().add(h);
+    }
+
+
+    public void italianClicked(ActionEvent event) {
+        VBox h = new VBox();
+        Image img = new Image("C:\\Users\\ПК\\IdeaProjects\\Restaurant\\src\\main\\resources\\com\\example\\restaurant\\PROSECCO.jpg");
+        ImageView i = new ImageView(img);
+        i.setFitHeight(200);
+        i.setFitWidth(200);
+        h.setSpacing(30);
+        Text text = new Text("isbvhuabcliwa");
+        text.setStyle("  -fx-font-family: \"Berlin Sans FB\", sans-serif;\n" +
+                "    -fx-font-size: 40px;\n" +
+                "    -fx-font-weight: regular;");
+        h.setStyle("-fx-border-color:black;"+"-fx-border-radius:10px");
+        h.getChildren().addAll(i,text);
+
+
+    }
+
+    public void chineseClicked(ActionEvent event) {
+    }
+
+    public void ordersClicked(ActionEvent event) {
+    }
+
+    public void contacUsClicked(ActionEvent event) {
+    }
 }

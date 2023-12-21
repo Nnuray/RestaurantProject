@@ -3,20 +3,17 @@ package com.example.restaurant;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.FileNotFoundException;
@@ -127,11 +124,51 @@ public class Page implements Menu{
 
         @FXML
         void calamari3000Clicked(ActionEvent event) {
+                MenuItem m = new MenuItem(new Text("Calamri"),600,1);
+                HBox h = new HBox();
+                h.setMaxSize(300,300);
+                Image img = new Image("C:\\Users\\ПК\\IdeaProjects\\Restaurant\\src\\main\\resources\\com\\example\\restaurant\\chinese.png");
+                ImageView i = new ImageView(img);
+                i.setFitHeight(200);
+                i.setFitWidth(250);
+                h.setSpacing(20);
+                Insets buttonInsets = new Insets(100, 20, 10, 20);;
+                Text price = new Text(String.valueOf(m.getPrice()));
+                m.getName().setStyle("  -fx-font-family: \"Berlin Sans FB\", sans-serif;\n" +
+                        "    -fx-font-size: 40px;\n" +
+                        "    -fx-font-weight: regular;");
+                price.setStyle("  -fx-font-family: \"Berlin Sans FB\", sans-serif;\n" +
+                        "    -fx-font-size: 40px;\n" +
+                        "    -fx-font-weight: regular;");
+                h.setStyle("-fx-border-color:black;"+"-fx-border-radius:10px");
+                Button cancel = new Button("cancel");
+                cancel.setStyle("-fx-font-size:10px");
+                cancel.setPrefSize(50,50);
+                h.setMargin(cancel,buttonInsets);
+                cancel.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                                vbox.getChildren().remove(h);
+                        }
+                });
+                cancel.setStyle("-fx-background-color:fffff;\n" +
+                        "-fx-border-radius:20px;\n" +
+                        "-fx-border-color:gray;" + "-fx-font-size:15px;");
+                h.getChildren().addAll(i,m.getName(),cancel,price);
+                h.setLayoutX(50);
 
+                vbox.getChildren().add(h);
         }
 
         @FXML
         void chicken2450Clicked(ActionEvent event) {
+                HBox hbox = new HBox();
+             Pane pane = new Pane();
+             pane.setMaxWidth(400);
+             pane.setMaxHeight(200);
+             pane.setStyle("-fx-border-color:black");
+             hbox.getChildren().add(pane);
+             vbox.getChildren().add(hbox);
 
         }
 
@@ -142,15 +179,33 @@ public class Page implements Menu{
 
         @FXML
         void coke600Clicked(ActionEvent event) {
-                HBox hbox = new HBox();
-                ImageView imageView = new ImageView();
-                Image img = new Image("C:\\Users\\ПК\\IdeaProjects\\Restaurant\\src\\main\\resources\\com\\example\\restaurant\\2160Antons_0922_LizClayman_00118.jpg");
-                imageView.setImage(img);
-                imageView.setFitWidth(100);
-                imageView.setFitHeight(100);
-                hbox.getChildren().add(imageView);
-                vbox.setSpacing(10);
-                vbox.getChildren().add(hbox);
+                MenuItem m = new MenuItem(new Text("Coke"),600,1);
+                HBox h = new HBox();
+                Image img = new Image("C:\\Users\\ПК\\IdeaProjects\\Restaurant\\src\\main\\resources\\com\\example\\restaurant\\red wine.png");
+                ImageView i = new ImageView(img);
+                i.setFitHeight(200);
+                i.setFitWidth(200);
+                h.setSpacing(30);
+                m.getName().setStyle("  -fx-font-family: \"Berlin Sans FB\", sans-serif;\n" +
+                        "    -fx-font-size: 40px;\n" +
+                        "    -fx-font-weight: regular;");
+                h.setStyle("-fx-border-color:black;"+"-fx-border-radius:10px");
+                Button cancel = new Button("cancel");
+                cancel.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                                vbox.getChildren().remove(h);
+                        }
+                });
+                cancel.setStyle("-fx-background-color:fffff;\n" +
+                        "-fx-border-radius:20px;\n" +
+                        "-fx-border-color:gray;");
+                h.getChildren().addAll(i,m.getName(),cancel);
+                h.setLayoutX(50);
+
+                vbox.getChildren().add(h);
+
+
         }
 
         @FXML
@@ -186,8 +241,8 @@ public class Page implements Menu{
                         )
                 );
                 task.playFromStart();
-                MenuItem m = new MenuItem("dumplings",2300,1);
-                list.add(m);
+//                MenuItem m = new MenuItem("dumplings",2300,1);
+//                list.add(m);
                 BaseRestaurant b = new BaseRestaurant();
                 int x = b.calculateTotal(list);
                 Text text = new Text(String.valueOf(x));
@@ -203,6 +258,7 @@ public class Page implements Menu{
 
         @FXML
         void fish2500Clicked(ActionEvent event) {
+//                MenuItem m = new MenuItem("fish",2500,1);
 
 
         }
