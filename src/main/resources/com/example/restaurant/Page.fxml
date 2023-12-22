@@ -520,6 +520,34 @@
                            </children></AnchorPane>
                     </content>
                   </ScrollPane>
+                  <ScrollPane fx:id="payementScroll" prefHeight="1050.0" prefWidth="740.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="740.0">
+                           <children>
+                              <Pane fx:id="payementPane" prefHeight="700.0" prefWidth="740.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Button layoutX="192.0" layoutY="409.0" mnemonicParsing="false" onAction="#payClicked" prefHeight="45.0" prefWidth="356.0" stylesheets="@Css.css" text="Pay" />
+                                    <Text fx:id="totalText" layoutX="255.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="32.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="card" layoutX="225.0" layoutY="317.0" prefHeight="31.0" prefWidth="275.0" promptText="Card Number" />
+                                    <TextField layoutX="225.0" layoutY="358.0" prefHeight="25.0" prefWidth="108.0" promptText="exp.date" />
+                                    <TextField layoutX="388.0" layoutY="358.0" prefWidth="103.0" promptText="CVV" />
+                                    <Text layoutX="236.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Your Card Information">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox fx:id="lastVbox" layoutX="-11.0" layoutY="485.0" prefHeight="500.0" prefWidth="737.0" />
+                                    <TextField fx:id="customer" layoutX="226.0" layoutY="276.0" prefHeight="31.0" prefWidth="273.0" promptText="Enter Your Name" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
                   <ScrollPane prefHeight="950.0" prefWidth="740.0">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="950.0" prefWidth="740.0">
@@ -554,34 +582,6 @@
                                     <Image url="@86765Antons_0922_LizClayman_00009.jpg" />
                                  </image>
                               </ImageView>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
-                  <ScrollPane fx:id="payementScroll" prefHeight="1050.0" prefWidth="740.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="740.0">
-                           <children>
-                              <Pane fx:id="payementPane" prefHeight="700.0" prefWidth="740.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <Button layoutX="192.0" layoutY="409.0" mnemonicParsing="false" onAction="#payClicked" prefHeight="45.0" prefWidth="356.0" stylesheets="@Css.css" text="Pay" />
-                                    <Text fx:id="totalText" layoutX="255.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0">
-                                       <font>
-                                          <Font name="Berlin Sans FB" size="32.0" />
-                                       </font>
-                                    </Text>
-                                    <TextField fx:id="card" layoutX="225.0" layoutY="317.0" prefHeight="31.0" prefWidth="275.0" promptText="Card Number" />
-                                    <TextField layoutX="225.0" layoutY="358.0" prefHeight="25.0" prefWidth="108.0" promptText="exp.date" />
-                                    <TextField layoutX="388.0" layoutY="358.0" prefWidth="103.0" promptText="CVV" />
-                                    <Text layoutX="236.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Your Card Information">
-                                       <font>
-                                          <Font name="Berlin Sans FB" size="20.0" />
-                                       </font>
-                                    </Text>
-                                    <VBox fx:id="lastVbox" layoutX="-11.0" layoutY="485.0" prefHeight="500.0" prefWidth="737.0" />
-                                    <TextField fx:id="customer" layoutX="226.0" layoutY="276.0" prefHeight="31.0" prefWidth="273.0" promptText="Enter Your Name" />
-                                 </children>
-                              </Pane>
                            </children>
                         </AnchorPane>
                     </content>
