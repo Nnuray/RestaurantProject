@@ -5,12 +5,19 @@ import javafx.scene.text.Text;
 public class MenuItem {
     Text name;
     int price;
-    int quantity;
+    CuisineFactory cuisine;
+    DrinksFactory drink;
 
-    public MenuItem(Text name, int price, int quantity) {
+    public MenuItem(Text name, int price,CuisineFactory cuisine) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
+        this.cuisine = cuisine;
+    }
+
+    public MenuItem(Text name,int price,DrinksFactory drink){
+        this.name = name;
+        this.price = price;
+        this.drink = drink;
     }
 
     public Text getName() {
@@ -21,10 +28,6 @@ public class MenuItem {
         return price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
     public void setName(Text name) {
         this.name = name;
     }
@@ -33,7 +36,4 @@ public class MenuItem {
         this.price = price;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 }

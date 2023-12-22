@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-public  class BaseRestaurant implements Restaurant,Cart {
+public  class BaseRestaurant implements Cart {
     protected Cart shoppingCart;
     private int total;
 
@@ -68,13 +68,10 @@ public  class BaseRestaurant implements Restaurant,Cart {
     @Override
     public int calculateTotal(List<MenuItem> list) {
         for(int i = 0;i<list.size();i++){
-            total+=list.get(i).price*list.get(i).quantity;
+            total+=list.get(i).price;
         }
         return total;
     }
 
-    @Override
-    public void prepareFood() {
 
-    }
 }
